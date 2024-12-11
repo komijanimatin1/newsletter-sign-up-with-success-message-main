@@ -1,0 +1,63 @@
+body {
+    background-color: hsl(234, 29%, 20%);
+    font-family: Roboto;
+}
+
+.container {
+    width: 60%;
+    margin: 1rem auto;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+
+
+.containerChildren {
+    margin: 1rem 1rem;
+}
+
+#text h1, #text .details > * {
+    margin-bottom: 1rem;
+}
+
+#text .details ul {
+    padding-left: 0;
+    margin-bottom: 2rem;
+!important;
+}
+
+#text li {
+    display: flex;
+    align-items: center;
+    font-size: small;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#text li::before {
+    content: '';
+    background-image: url("./assets/images/icon-list.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+}
+
+#text form {
+    display: flex;
+    flex-direction: column;
+}
+
+#design {
+    width: 50%;
+}
+
+.container :last-of-type img {
+    width: 100%;
+    /*height: ;*/
+}
+
