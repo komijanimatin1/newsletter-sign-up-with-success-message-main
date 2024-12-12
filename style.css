@@ -1,5 +1,5 @@
 body {
-    background-color: hsl(234, 29%, 20%);
+    background-color: hsl(235, 18%, 26%);
     font-family: Roboto;
     display: flex;
 
@@ -63,6 +63,20 @@ body {
     display: flex;
     flex-direction: column;
     font-weight: bold;
+    width: 80%;
+}
+#text form button{
+    background-color: hsl(235, 18%, 26%);
+    height: 2.5rem;
+    color: white;
+    border-radius: 5px;
+}
+#text form input{
+    margin: 1rem 0 2rem 0;
+    height: 2rem;
+    border-inline:none;
+    border-radius: 5px;
+    border: hsl(231, 7%, 60%) solid 1px;
 }
 
 #design {
