@@ -22,17 +22,18 @@ body {
 .containerChildren {
     margin: 1rem 1rem;
 }
-#text{
+
+#text {
     width: 43%;
     margin-left: 6%;
 }
+
 #text h1, #text .details > * {
     margin-bottom: 2rem;
-    /*font-size: larger;*/
 }
-#text h1{
+
+#text h1 {
     font-size: 3rem;
-    /*text-align: center;*/
 }
 
 #text .details ul {
@@ -65,18 +66,33 @@ body {
     font-weight: bold;
     width: 80%;
 }
+
 #text form button{
     background-color: hsl(235, 18%, 26%);
-    height: 2.5rem;
+    background-image: none;
+    height: 3.5rem;
     color: white;
     border-radius: 5px;
+    border: none;
 }
-#text form input{
+
+#text form button:hover {
+    background-image: linear-gradient(to right, hsl(4, 100%, 67%), #ff8c00);
+    transition-property: background-image;
+    transition-duration: 2s;
+    cursor: pointer;
+}
+
+#text form input {
     margin: 1rem 0 2rem 0;
-    height: 2rem;
-    border-inline:none;
+    height: 3rem;
+    border-inline: none;
     border-radius: 5px;
-    border: hsl(231, 7%, 60%) solid 1px;
+    border: hsl(0, 0%, 80%) solid 1px;
+}
+#text form input:focus{
+    border: black solid 1px;
+    cursor: pointer;
 }
 
 #design {
@@ -87,9 +103,3 @@ body {
     background-repeat: no-repeat;
     border-radius: 20px;
 }
-
-/*.container :last-of-type img {*/
-/*    width: 100%;*/
-/*    height:100% ;*/
-/*}*/
-
