@@ -1,17 +1,21 @@
 body {
-    background-color: hsl(234, 29%, 20%);
+    background-color: hsl(235, 18%, 26%);
     font-family: Roboto;
+    display: flex;
+
 }
 
 .container {
     width: 60%;
-    margin: 1rem auto;
+    height: 40rem;
+    margin: 6rem auto;
     background-color: white;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     border-radius: 20px;
+    align-items: center;
 }
 
 
@@ -19,8 +23,17 @@ body {
     margin: 1rem 1rem;
 }
 
+#text {
+    width: 43%;
+    margin-left: 6%;
+}
+
 #text h1, #text .details > * {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+#text h1 {
+    font-size: 2rem;
 }
 
 #text .details ul {
@@ -37,7 +50,7 @@ body {
     position: relative;
 }
 
-#text li::before {
+#text li::before { /*this is an images first of all li*/
     content: '';
     background-image: url("./assets/images/icon-list.svg");
     background-size: contain;
@@ -50,14 +63,82 @@ body {
 #text form {
     display: flex;
     flex-direction: column;
+    font-weight: bold;
+    width: 80%;
+}
+
+#text form button {
+    background-color: hsl(235, 18%, 26%);
+    background-image: none;
+    height: 3.5rem;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+#text form button:hover {
+    background-image: linear-gradient(to right, hsl(4, 100%, 67%), #ff8c00);
+    transition-property: background-image;
+    transition-duration: 2s;
+    cursor: pointer;
+}
+
+#text form input {
+    margin: 1rem 0 2rem 0;
+    height: 3rem;
+    border-inline: none;
+    border-radius: 5px;
+    border: hsl(0, 0%, 80%) solid 1px;
+}
+
+#text form input:focus {
+    border: black solid 1px;
+    cursor: pointer;
 }
 
 #design {
     width: 50%;
+    height: 38rem;
+    background-size: cover;
+    background-image: url(./assets/images/illustration-sign-up-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    border-radius: 20px;
 }
 
-.container :last-of-type img {
-    width: 100%;
-    /*height: ;*/
+@media (max-width: 1020px) {
+    .container {
+        width: 90%;
+    }
 }
 
+@media (max-width: 600px) {
+    .container {
+        margin: 2rem auto;
+        width: 90%;
+        flex-direction: column-reverse;
+        height: 48rem;
+    }
+
+    #text {
+        width: 90%;
+        margin: 0;
+    }
+
+    #design {
+        width: 90%;
+        background-image: url("./assets/images/illustration-sign-up-mobile.svg");
+        height: 16rem;
+        margin: 1rem 0;
+    }
+
+    #text form {
+        width: 100%;
+    }
+}
+
+@media (max-height: 800px) {
+    .container {
+        margin: 2rem auto;
+    }
+}
