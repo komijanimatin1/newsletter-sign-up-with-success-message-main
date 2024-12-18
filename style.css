@@ -83,7 +83,7 @@ body {
     cursor: pointer;
 }
 
-#text form input {
+.email {
     margin: 1rem 0 2rem 0;
     height: 3rem;
     border-inline: none;
@@ -91,9 +91,26 @@ body {
     border: hsl(0, 0%, 80%) solid 1px;
 }
 
-#text form input:focus {
+.email:focus {
+    outline: none;
     border: black solid 1px;
     cursor: pointer;
+}
+
+.email2::placeholder {
+    color: hsl(4, 100%, 67%);
+}
+
+.formLabel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.emailError {
+    font-weight: lighter;
+    color: hsl(4, 100%, 67%);
+    font-size: small;
 }
 
 #design {
