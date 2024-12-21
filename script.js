@@ -6,7 +6,7 @@ var design = document.getElementById('design');
 var container = document.querySelector('body div');
 //checking validations from DOM
 if (emailInput && submitBtn && formLabel && text && design && container) {
-    var clicked = false;
+    // var clicked: boolean = false;
     var hasError = false;
     var errorMassage_1 = document.createElement('p');
     submitBtn.addEventListener('click', function (e) {
@@ -18,12 +18,12 @@ if (emailInput && submitBtn && formLabel && text && design && container) {
         if (emailInput.value === '' || !emailInput.checkValidity()) {
             emailInput.style.borderColor = 'hsl(4, 100%, 67%)';
             emailInput.style.color = 'hsl(4, 100%, 67%)';
-            clicked = true;
-            emailInput.classList.add('email2');
+            // clicked = true;
+            emailInput.classList.add('errorPlaceholder', 'errorFocus');
             if (!hasError) {
                 hasError = true;
                 errorMassage_1.innerHTML = 'Valid email required';
-                errorMassage_1.classList.add('emailError');
+                errorMassage_1.classList.add('emailErrorMassage');
                 formLabel.append(errorMassage_1);
             }
         }
@@ -31,7 +31,7 @@ if (emailInput && submitBtn && formLabel && text && design && container) {
             //saving in user e-mail
             var userEmail = emailInput.value;
             // make a blank container
-            clicked = false;
+            // clicked = false;
             text.remove();
             design.remove();
             container.classList.add('successMassage');
@@ -58,11 +58,6 @@ if (emailInput && submitBtn && formLabel && text && design && container) {
                 container.classList.remove('successMassage');
                 container.append(text, design);
             });
-        }
-    });
-    emailInput.addEventListener('focus', function () {
-        if (clicked) {
-            emailInput.style.borderColor = 'hsl(4, 100%, 67%)';
         }
     });
 }

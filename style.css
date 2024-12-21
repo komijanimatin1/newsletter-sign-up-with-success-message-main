@@ -98,7 +98,7 @@ body {
     cursor: pointer;
 }
 
-.email2::placeholder {
+.errorPlaceholder::placeholder {
     color: hsl(4, 100%, 67%);
 }
 
@@ -108,10 +108,13 @@ body {
     justify-content: space-between;
 }
 
-.emailError {
+.emailErrorMassage {
     font-weight: lighter;
     color: hsl(4, 100%, 67%);
     font-size: small;
+}
+.errorFocus:focus{
+    border-color:hsl(4, 100%, 67%) ;
 }
 
 #design {

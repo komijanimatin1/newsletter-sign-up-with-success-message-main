@@ -7,7 +7,7 @@ const container = document.querySelector('body div') as HTMLDivElement | null;
 
 //checking validations from DOM
 if (emailInput && submitBtn && formLabel && text && design && container) {
-    var clicked: boolean = false;
+    // var clicked: boolean = false;
     var hasError: boolean = false;
 
     let errorMassage = document.createElement('p');
@@ -22,12 +22,13 @@ if (emailInput && submitBtn && formLabel && text && design && container) {
         if (emailInput.value === '' || !emailInput.checkValidity()) {
             emailInput.style.borderColor = 'hsl(4, 100%, 67%)';
             emailInput.style.color = 'hsl(4, 100%, 67%)';
-            clicked = true;
-            emailInput.classList.add('email2');
+            // clicked = true;
+            emailInput.classList.add('errorPlaceholder', 'errorFocus');
+
             if (!hasError) {
                 hasError = true;
                 errorMassage.innerHTML = 'Valid email required';
-                errorMassage.classList.add('emailError');
+                errorMassage.classList.add('emailErrorMassage');
                 formLabel.append(errorMassage);
             }
         } else {
@@ -35,7 +36,7 @@ if (emailInput && submitBtn && formLabel && text && design && container) {
             var userEmail: string = emailInput.value;
 
             // make a blank container
-            clicked = false;
+            // clicked = false;
             text.remove();
             design.remove();
             container.classList.add('successMassage');
@@ -73,11 +74,5 @@ if (emailInput && submitBtn && formLabel && text && design && container) {
         }
 
 
-    });
-
-    emailInput.addEventListener('focus', () => {
-        if (clicked) {
-            emailInput.style.borderColor = 'hsl(4, 100%, 67%)';
-        }
     });
 }
