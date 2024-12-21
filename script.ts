@@ -14,9 +14,11 @@ if (emailInput && submitBtn && formLabel && text && design && container) {
 
     submitBtn.addEventListener('click', (e) => {
         e.preventDefault();
+
         emailInput.style.borderColor = 'hsl(0, 0%, 80%)';
         emailInput.style.color = 'black';
         errorMassage.remove();
+        hasError = false;
         if (emailInput.value === '' || !emailInput.checkValidity()) {
             emailInput.style.borderColor = 'hsl(4, 100%, 67%)';
             emailInput.style.color = 'hsl(4, 100%, 67%)';
@@ -51,15 +53,23 @@ if (emailInput && submitBtn && formLabel && text && design && container) {
             let description = document.createElement('p');
             description.innerHTML = 'A confirmation email has been sent to <p class="userEmail">' + userEmail + '</p>. Please open it and click the button inside to confirm your subscription.';
 
-
             //Dismiss button
             let dismissBtn = document.createElement('button');
             dismissBtn.innerHTML = 'Dismiss message';
             dismissBtn.classList.add('button');
 
-
             //append elements to success massage div
             container.append(checkImg, successLabel, description, dismissBtn);
+
+            //dismiss button Performance
+
+            dismissBtn.addEventListener('click', (event) => {
+                event.stopPropagation();
+                container.innerHTML = '';
+                container.classList.remove('successMassage');
+                container.append(text, design);
+            })
+
         }
 
 

@@ -14,6 +14,7 @@ if (emailInput && submitBtn && formLabel && text && design && container) {
         emailInput.style.borderColor = 'hsl(0, 0%, 80%)';
         emailInput.style.color = 'black';
         errorMassage_1.remove();
+        hasError = false;
         if (emailInput.value === '' || !emailInput.checkValidity()) {
             emailInput.style.borderColor = 'hsl(4, 100%, 67%)';
             emailInput.style.color = 'hsl(4, 100%, 67%)';
@@ -50,6 +51,13 @@ if (emailInput && submitBtn && formLabel && text && design && container) {
             dismissBtn.classList.add('button');
             //append elements to success massage div
             container.append(checkImg, successLabel, description, dismissBtn);
+            //dismiss button Performance
+            dismissBtn.addEventListener('click', function (event) {
+                event.stopPropagation();
+                container.innerHTML = '';
+                container.classList.remove('successMassage');
+                container.append(text, design);
+            });
         }
     });
     emailInput.addEventListener('focus', function () {
