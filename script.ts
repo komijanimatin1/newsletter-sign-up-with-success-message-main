@@ -7,7 +7,6 @@ const container = document.querySelector('body div') as HTMLDivElement | null;
 
 //checking validations from DOM
 if (emailInput && submitBtn && formLabel && text && design && container) {
-    // var clicked: boolean = false;
     var hasError: boolean = false;
 
     let errorMassage = document.createElement('p');
@@ -20,9 +19,10 @@ if (emailInput && submitBtn && formLabel && text && design && container) {
         errorMassage.remove();
         hasError = false;
         if (emailInput.value === '' || !emailInput.checkValidity()) {
+            //error
+
             emailInput.style.borderColor = 'hsl(4, 100%, 67%)';
             emailInput.style.color = 'hsl(4, 100%, 67%)';
-            // clicked = true;
             emailInput.classList.add('errorPlaceholder', 'errorFocus');
 
             if (!hasError) {
@@ -32,11 +32,13 @@ if (emailInput && submitBtn && formLabel && text && design && container) {
                 formLabel.append(errorMassage);
             }
         } else {
+            //submit
+
             //saving in user e-mail
             var userEmail: string = emailInput.value;
 
             // make a blank container
-            // clicked = false;
+
             text.remove();
             design.remove();
             container.classList.add('successMassage');
@@ -66,6 +68,10 @@ if (emailInput && submitBtn && formLabel && text && design && container) {
 
             dismissBtn.addEventListener('click', (event) => {
                 event.stopPropagation();
+
+                emailInput.value='';
+                emailInput.classList.remove('errorPlaceholder', 'errorFocus');
+
                 container.innerHTML = '';
                 container.classList.remove('successMassage');
                 container.append(text, design);

@@ -6,7 +6,6 @@ var design = document.getElementById('design');
 var container = document.querySelector('body div');
 //checking validations from DOM
 if (emailInput && submitBtn && formLabel && text && design && container) {
-    // var clicked: boolean = false;
     var hasError = false;
     var errorMassage_1 = document.createElement('p');
     submitBtn.addEventListener('click', function (e) {
@@ -16,9 +15,9 @@ if (emailInput && submitBtn && formLabel && text && design && container) {
         errorMassage_1.remove();
         hasError = false;
         if (emailInput.value === '' || !emailInput.checkValidity()) {
+            //error
             emailInput.style.borderColor = 'hsl(4, 100%, 67%)';
             emailInput.style.color = 'hsl(4, 100%, 67%)';
-            // clicked = true;
             emailInput.classList.add('errorPlaceholder', 'errorFocus');
             if (!hasError) {
                 hasError = true;
@@ -28,10 +27,10 @@ if (emailInput && submitBtn && formLabel && text && design && container) {
             }
         }
         else {
+            //submit
             //saving in user e-mail
             var userEmail = emailInput.value;
             // make a blank container
-            // clicked = false;
             text.remove();
             design.remove();
             container.classList.add('successMassage');
@@ -54,6 +53,8 @@ if (emailInput && submitBtn && formLabel && text && design && container) {
             //dismiss button Performance
             dismissBtn.addEventListener('click', function (event) {
                 event.stopPropagation();
+                emailInput.value = '';
+                emailInput.classList.remove('errorPlaceholder', 'errorFocus');
                 container.innerHTML = '';
                 container.classList.remove('successMassage');
                 container.append(text, design);
