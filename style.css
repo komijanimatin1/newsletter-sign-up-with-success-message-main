@@ -67,7 +67,8 @@ body {
     width: 80%;
 }
 
-#text form button {
+.button {
+    width: 100%;
     background-color: hsl(235, 18%, 26%);
     background-image: none;
     height: 3.5rem;
@@ -76,7 +77,7 @@ body {
     border: none;
 }
 
-#text form button:hover {
+.button:hover {
     background-image: linear-gradient(to right, hsl(4, 100%, 67%), #ff8c00);
     transition-property: background-image;
     transition-duration: 2s;
@@ -97,7 +98,7 @@ body {
     cursor: pointer;
 }
 
-.email2::placeholder {
+.errorPlaceholder::placeholder {
     color: hsl(4, 100%, 67%);
 }
 
@@ -107,10 +108,13 @@ body {
     justify-content: space-between;
 }
 
-.emailError {
+.emailErrorMassage {
     font-weight: lighter;
     color: hsl(4, 100%, 67%);
     font-size: small;
+}
+.errorFocus:focus{
+    border-color:hsl(4, 100%, 67%) ;
 }
 
 #design {
@@ -122,7 +126,24 @@ body {
     background-position: right;
     border-radius: 20px;
 }
-
+/*success massage*/
+.successMassage{
+    width: 20%;
+    height: 25rem;
+    margin: 10rem auto;
+    padding: 3rem;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.successMassage h1{
+    font-size: 3rem;
+}
+.userEmail{
+    font-weight: bold;
+    display: inline;
+}
+/*responsive*/
 @media (max-width: 1020px) {
     .container {
         width: 90%;
